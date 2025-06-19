@@ -12,8 +12,14 @@ How it works:
 
 ### ESM, CJS, TS definitions & UMD (optional)
 
+1.
 ```shell
 npm install --save https://github.com/IPS-LMU/maintenanceWarningSnackbar/tarball/v2.x
+```
+
+2. Embed the css script to your application:
+```html
+<link rel="stylesheet" href="node_modules/maintenance-warning-snackbar/dist/maintenance-warning-snackbar.css"
 ```
 
 ### UMD Bundle (for Vanilla JS)
@@ -29,9 +35,7 @@ Install via NPM and reference local files.
 
 ## Use
 
-### Import
-
-#### ESM, Typescript
+### ESM, Typescript
 
 Import the classes and functions from `maintenance-warning-snackbar`. For example
 
@@ -49,7 +53,7 @@ const snackbar = new MaintenanceWarningSnackbar({
 });
 ```
 
-#### UMD Bundle
+### UMD Bundle
 
 All functions and classes are available via global scope `MaintenanceWarningSnackbar`. For example:
 
