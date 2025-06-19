@@ -23,7 +23,7 @@ export default defineConfig(() => ({
   // Configuration for building your library.
   // See: https://vitejs.dev/guide/build.html#library-mode
   build: {
-    outDir: './dist/maintenance-warning-snackbar',
+    outDir: './maintenance-warning-snackbar',
     emptyOutDir: true,
     reportCompressedSize: true,
     commonjsOptions: {

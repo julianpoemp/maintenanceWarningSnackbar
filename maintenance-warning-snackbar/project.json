@@ -1,5 +1,5 @@
 {
-  "name": "maintenance-warning-snackbar",
+  "name": "maintenance-warning-snackbar-library",
   "$schema": "../node_modules/nx/schemas/project-schema.json",
   "sourceRoot": "maintenance-warning-snackbar/src",
   "projectType": "library",
@@ -9,7 +9,7 @@
       "outputs": ["{options.outputPath}"],
       "generateExportsField": true,
       "options": {
-        "outputPath": "dist/maintenance-warning-snackbar",
+        "outputPath": "dist",
         "tsConfig": "maintenance-warning-snackbar/tsconfig.lib.json"
       }
     },

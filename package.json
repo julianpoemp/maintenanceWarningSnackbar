@@ -1,9 +1,8 @@
 {
-  "name": "@maintenance-warning-snackbar2/source",
+  "name": "maintenance-warning-snackbar",
   "description": "Super simple vanilla JavaScript lib (under 40 lines of code (excluding CSS string)) to display a maintenance warning side bar. The snackbar is shown for X seconds (currently 10 seconds) and then disappears unless it is closed by the user prior to the X seconds being up.",
-  "version": "0.0.0",
+  "version": "2.0.0",
   "license": "MIT",
-  "private": false,
   "author": "Raphael Winkelmann",
   "homepage": "https://github.com/IPS-LMU/maintenanceWarningSnackbar#readme",
   "repository": {
@@ -14,13 +13,12 @@
     "url": "https://github.com/IPS-LMU/maintenanceWarningSnackbar/issues"
   },
   "scripts": {
-    "build": "nx build maintenance-warning-snackbar",
-    "build:watch": "nx build maintenance-warning-snackbar --watch",
+    "build": "nx build maintenance-warning-snackbar-library",
+    "build:watch": "nx build maintenance-warning-snackbar-library --watch",
     "start:demo": "http-server -o demo -c-1",
-    "start:demo-legacy": "http-server -o demo-legacy -c-1",
-    "publish": "npm run build && nx npm maintenance-warning-snackbar --dry-run"
+    "start:demo-legacy": "http-server -o demo-legacy -c-1"
   },
-  "private": true,
+  "private": false,
   "devDependencies": {
     "@eslint/js": "^9.8.0",
     "@nx/eslint": "21.2.0",
@@ -67,6 +65,18 @@
           "storage": "tmp/local-registry/storage"
         }
       }
+    }
+  },
+  "main": "./dist/index.js",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    "./package.json": "./package.json",
+    ".": {
+      "development": "./maintenance-warning-snackbar/src/lib/index.ts",
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js",
+      "default": "./dist/index.js"
     }
   }
 }
