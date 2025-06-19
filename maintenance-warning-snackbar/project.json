@@ -1,0 +1,34 @@
+{
+  "name": "maintenance-warning-snackbar",
+  "$schema": "../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "maintenance-warning-snackbar/src",
+  "projectType": "library",
+  "targets": {
+    "build": {
+      "executor": "@nx/vite:build",
+      "outputs": ["{options.outputPath}"],
+      "generateExportsField": true,
+      "options": {
+        "outputPath": "dist/maintenance-warning-snackbar",
+        "tsConfig": "maintenance-warning-snackbar/tsconfig.lib.json"
+      }
+    },
+    "npm": {
+      "executor": "ngx-deploy-npm:deploy",
+      "options": {
+        "access": "public",
+        "distFolderPath": "dist/maintenance-warning-snackbar"
+      }
+    },
+    "lint": {
+      "executor": "@nx/eslint:lint",
+      "options": {
+        "lintFilePatterns": [
+          "libs/maintenance-warning-snackbar",
+          "maintenance-warning-snackbar/**/*.ts",
+          "maintenance-warning-snackbar/package.json"
+        ]
+      }
+    }
+  }
+}

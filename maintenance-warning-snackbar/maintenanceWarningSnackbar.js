@@ -13,7 +13,6 @@
     border: 2px solid #F00;
     padding: 16px;
     position: fixed;
-    z-index: 1;
     left: 12.5%;
     bottom: 30px;
     font-size: 17px;

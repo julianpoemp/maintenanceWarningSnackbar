@@ -1,0 +1,34 @@
+{
+  "name": "maintenance-warning-snackbar",
+  "description": "Super simple vanilla JavaScript lib (under 40 lines of code (excluding CSS string)) to display a maintenance warning side bar. The snackbar is shown for X seconds (currently 10 seconds) and then disappears unless it is closed by the user prior to the X seconds being up.",
+  "version": "2.0.0",
+  "license": "MIT",
+  "private": false,
+  "author": "Raphael Winkelmann",
+  "bugs": {
+    "url": "https://github.com/IPS-LMU/maintenanceWarningSnackbar/issues"
+  },
+  "homepage": "https://github.com/IPS-LMU/maintenanceWarningSnackbar#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/IPS-LMU/maintenanceWarningSnackbar.git"
+  },
+  "type": "commonjs",
+  "main": "./index.js",
+  "module": "./index.js",
+  "types": "./index.d.ts",
+  "exports": {
+    "./package.json": "./package.json",
+    ".": {
+      "development": "./src/index.ts",
+      "types": "./index.d.ts",
+      "import": "./index.js",
+      "default": "./index.js"
+    }
+  },
+  "files": [
+    "dist",
+    "!**/*.tsbuildinfo"
+  ],
+  "dependencies": {}
+}

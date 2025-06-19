@@ -1,6 +1,4 @@
-## Maintenance Warning Snackbar 2.0
-
-WIP
+## Maintenance Warning Snackbar
 
 Super simple vanilla JavaScript lib (under 40 lines of code (excluding CSS string)) to display a maintenance warning side bar.
 The snackbar is shown for X seconds (currently 10 seconds) and then disappears unless it is closed by the user prior to the X seconds being up.
@@ -29,5 +27,8 @@ After that you need to insert ````node_modules/maintenanceWarningSnackbar/mainte
 
 ## For Developers
 
-1. Clone this repo and install via `npm install"
-2. Call npm start
+1. Clone this repo and install via `npm install --legacy-peer-deps`.
+2. Call `npm build:watch`
+3. Call `npm start:demo` or `npm start:demo-legacy` to test the legacy version
+
+Now you can change the source code in maintenance-warning-snackbar/src and check the changes on the demo page.
