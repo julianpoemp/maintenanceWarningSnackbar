@@ -6,5 +6,8 @@
     {
       "path": "./maintenance-warning-snackbar"
     }
-  ]
+  ],
+  "compilerOptions": {
+    "ignoreDeprecations": "6.0"
+  }
 }
