@@ -5,12 +5,6 @@
   "references": [
     {
       "path": "./maintenance-warning-snackbar"
-    },
-    {
-      "path": "./maintenance-warning-snackbar"
-    },
-    {
-      "path": "./maintenance-warning-snackbar"
     }
   ]
 }

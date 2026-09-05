@@ -31,7 +31,6 @@
       "plugin": "@nx/vite/plugin",
       "options": {
         "buildTargetName": "build",
-        "testTargetName": "test",
         "serveTargetName": "serve",
         "devTargetName": "dev",
         "previewTargetName": "preview",
@@ -46,6 +45,12 @@
       "options": {
         "targetName": "lint"
       }
+    },
+    {
+      "plugin": "@nx/vitest",
+      "options": {
+        "testTargetName": "test"
+      }
     }
   ],
   "release": {
@@ -53,5 +58,6 @@
       "preVersionCommand": "npx nx run-many -t build"
     }
   },
-  "analytics": false
+  "analytics": false,
+  "neverConnectToCloud": true
 }
