@@ -9,7 +9,7 @@ export class MaintenanceWarningSnackbar {
     const rightNowDate = Date.now();
     // get json
     const respJson = await (await fetch(this.options.jsonURL)).json();
-    if(!this.options.simulate) {
+    if (!this.options.simulate) {
       for (const maintEntry of respJson) {
         if (maintEntry.type === 'MAINTENANCE_SCHEDULED') {
           const maintDate = new Date(maintEntry.begin).getTime();
@@ -26,19 +26,22 @@ export class MaintenanceWarningSnackbar {
           }
 
           if (maintDate <= inXdaysDate && maintDate >= rightNowDate) {
-            // get text
-            const respTxtFetch = await fetch(this.options.txtURL);
+            if (!maintEntry.message) {
+              // get text from url
+              const respTxtFetch = await fetch(this.options.txtURL);
 
-            if (respTxtFetch.status === 200) {
-              const text = maintEntry.message || await respTxtFetch.text();
-              this.showMaintenanceWarning(text);
-              break; //
-            } else {
-              if (this.options.verbose) {
-                console.log('no maintenance text found!');
+              if (respTxtFetch.status === 200) {
+                this.showMaintenanceWarning(await respTxtFetch.text());
+                break; //
+              } else {
+                if (this.options.verbose) {
+                  console.log('no maintenance text found!');
+                }
               }
+            } else {
+              this.showMaintenanceWarning(maintEntry.message);
             }
-          } else if(this.options.verbose) {
+          } else if (this.options.verbose) {
             console.log(
               `maintenance out of interval: ${maintDate} <= ${inXdaysDate} && ${maintDate} >= ${rightNowDate}`
             );
@@ -46,7 +49,7 @@ export class MaintenanceWarningSnackbar {
         }
       }
     } else {
-      this.showMaintenanceWarning("This is a test.");
+      this.showMaintenanceWarning('This is a test.');
     }
   }
 
