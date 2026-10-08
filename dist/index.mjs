@@ -12,7 +12,8 @@ var e = class {
 			if (this.options.verbose && (console.log("------------------"), console.log(e), console.log(t), console.log(r)), t <= r && t >= e) {
 				let e = await fetch(this.options.txtURL);
 				if (e.status === 200) {
-					this.showMaintenanceWarning(await e.text());
+					let t = n.message || await e.text();
+					this.showMaintenanceWarning(t);
 					break;
 				}
 				this.options.verbose && console.log("no maintenance text found!");
