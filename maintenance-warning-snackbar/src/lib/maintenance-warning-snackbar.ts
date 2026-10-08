@@ -20,6 +20,7 @@ export class MaintenanceWarningSnackbar {
           if (this.options.verbose) {
             console.log('------------------');
             console.log(rightNowDate);
+            console.log(`Message: ${maintEntry.message}`);
             console.log(maintDate);
             console.log(inXdaysDate);
           }
@@ -37,6 +38,10 @@ export class MaintenanceWarningSnackbar {
                 console.log('no maintenance text found!');
               }
             }
+          } else if(this.options.verbose) {
+            console.log(
+              `maintenance out of interval: ${maintDate} <= ${inXdaysDate} && ${maintDate} >= ${rightNowDate}`
+            );
           }
         }
       }

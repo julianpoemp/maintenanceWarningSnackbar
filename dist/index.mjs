@@ -9,7 +9,7 @@ var e = class {
 		if (this.options.simulate) this.showMaintenanceWarning("This is a test.");
 		else for (let n of t) if (n.type === "MAINTENANCE_SCHEDULED") {
 			let t = new Date(n.begin).getTime(), r = e + this.options.nrOfDaysBe4MaintToDisplayMessage * 24 * 60 * 60 * 1e3;
-			if (this.options.verbose && (console.log("------------------"), console.log(e), console.log(t), console.log(r)), t <= r && t >= e) {
+			if (this.options.verbose && (console.log("------------------"), console.log(e), console.log(`Message: ${n.message}`), console.log(t), console.log(r)), t <= r && t >= e) {
 				let e = await fetch(this.options.txtURL);
 				if (e.status === 200) {
 					let t = n.message || await e.text();
@@ -17,7 +17,7 @@ var e = class {
 					break;
 				}
 				this.options.verbose && console.log("no maintenance text found!");
-			}
+			} else this.options.verbose && console.log(`maintenance out of interval: ${t} <= ${r} && ${t} >= ${e}`);
 		}
 	}
 	showMaintenanceWarning(e) {
