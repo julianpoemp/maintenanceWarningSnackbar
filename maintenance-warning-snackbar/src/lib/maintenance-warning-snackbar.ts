@@ -29,7 +29,8 @@ export class MaintenanceWarningSnackbar {
             const respTxtFetch = await fetch(this.options.txtURL);
 
             if (respTxtFetch.status === 200) {
-              this.showMaintenanceWarning(await respTxtFetch.text());
+              const text = maintEntry.message || await respTxtFetch.text();
+              this.showMaintenanceWarning(text);
               break; //
             } else {
               if (this.options.verbose) {
